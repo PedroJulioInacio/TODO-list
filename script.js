@@ -4,7 +4,6 @@ const listCompleta = document.querySelector('.list-tasks');
 
 let myListItens = [];
 
-
 function adicionarNovaTarefa() {
   const tarefaTexto = input.value.trim(); 
 
@@ -36,11 +35,11 @@ function mostrarTarefas() {
   localStorage.setItem('lista', JSON.stringify(myListItens));
 }
 
-
 function concluirTarefa(index) {
   myListItens[index].concluida = !myListItens[index].concluida;
   mostrarTarefas();
-    
+}
+
 function deletarItem(index) {
   myListItens.splice(index, 1);
   mostrarTarefas();
@@ -52,15 +51,13 @@ function recarregarTarefas() {
   mostrarTarefas();
 }
 
+// Inicialização
 recarregarTarefas();
+
 button.addEventListener('click', adicionarNovaTarefa);
-
-
 input.addEventListener('keypress', (event) => {
   if (event.key === 'Enter') {
     adicionarNovaTarefa();
   }
 });
 
-recarregarTarefas()
-button.addEventListener('click', adicionarNovaTarefa)
